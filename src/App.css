@@ -1,0 +1,150 @@
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 24px 32px 72px;
+}
+
+/* Baris utilitas: tombol tema, di luar urutan konten tugas */
+.utility {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 150ms ease;
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+}
+
+/* Bagian atas: judul, jumlah, jam dalam satu grid; ditutup satu garis tebal */
+.top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--fg);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.subtitle {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.figure-label {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.figure-value {
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.figure-value.accent {
+  color: var(--accent);
+}
+
+/* Tabel */
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+th,
+td {
+  padding: 16px 16px 16px 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+thead th {
+  padding-top: 20px;
+  padding-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+tbody td {
+  border-top: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+
+tbody tr:hover td {
+  background: var(--hover);
+}
+
+.name {
+  font-weight: 700;
+}
+
+td a {
+  color: var(--fg);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.empty {
+  padding: 48px 0;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+/* Mobile: satu kolom, urutan tetap judul, jumlah, jam, tabel */
+@media (max-width: 720px) {
+  .page {
+    padding: 12px 16px 48px;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

@@ -1,0 +1,57 @@
+/*
+  Arah: Swiss Grid. Tanpa kartu; hierarki dibangun dari ukuran huruf, grid, dan satu garis tebal.
+  Hanken Grotesk dipakai untuk semua teks: bobot 800 padat untuk judul raksasa, tetap netral di tabel.
+  Amber adalah satu-satunya aksen: angka jumlah mahasiswa dan garis bawah email.
+  Dark default (permintaan pengguna); light tersedia lewat tombol tema.
+*/
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --fg: #f4f4f2;
+  --muted: #a8a8a4;
+  --line: #2e2e2c;
+  --hover: #151514;
+  --accent: #ffb000;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f5f5f3;
+  --fg: #0a0a0a;
+  --muted: #55554f;
+  --line: #d2d2cc;
+  --hover: #ebebe7;
+  --accent: #8f5300;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
